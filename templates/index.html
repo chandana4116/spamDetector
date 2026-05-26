@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spam Message Detector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="main-container">
+        <div class="card">
+            <h1>📩 Spam Message Detector</h1>
+            <p class="subtitle">Detect suspicious or spam messages using Horspool Algorithm</p>
+
+            <form method="POST">
+                <textarea name="message" placeholder="Type your message here..." required></textarea>
+                <button type="submit">Detect Message</button>
+            </form>
+
+            {% if result %}
+            <div class="result-box">
+                <h2>{{ result }}</h2>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
